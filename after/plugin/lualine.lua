@@ -1,3 +1,10 @@
+local custom_cat = require 'lualine.themes.catppuccin'
+
+-- Change the background of lualine_c section for normal mode
+custom_cat.normal.a.bg = '#fab387'
+custom_cat.normal.b.bg = '#313244'
+custom_cat.normal.b.fg = '#abb2d0'
+
 local function getLspName()
 	local msg = 'No Active Lsp'
 	local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -22,7 +29,7 @@ require('lualine').setup {
 
 	options = {
 		icons_enabled = true,
-		theme = 'auto',
+		theme = custom_cat,
 		component_separators = { left = '', right = '' },
 		section_separators = { left = '', right = '' },
 		disabled_filetypes = {
@@ -41,13 +48,14 @@ require('lualine').setup {
 
 	sections = {
 		lualine_a = {
-			{ 'mode', fmt = function(str) return str:gsub(str, "  ") end }
+			{ 'mode', fmt = function(str) return str:gsub(str, "  ") end },
+			{ 'mode', fmt = function(str) return str:sub(1, 1) end },
 		},
-		lualine_b = { 'mode', 'filename', 'branch', 'diff', 'diagnostics' },
+		lualine_b = { 'filename', 'branch', 'diff', 'diagnostics' },
 		lualine_c = {},
 		lualine_x = {},
-		lualine_y = {  'encoding', 'fileformat', 'filetype', 'progress', 'location' },
-		lualine_z = { { getLspName }, { archLogo } }
+		lualine_y = { 'encoding', 'fileformat', 'filetype', 'progress', 'location' },
+		lualine_z = { { getLspName } }
 	},
 	inactive_sections = {
 		lualine_a = {},
