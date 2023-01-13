@@ -1,7 +1,7 @@
 local custom_cat = require 'lualine.themes.catppuccin'
 
--- Change the background of lualine_c section for normal mode
-custom_cat.normal.a.bg = '#fab387'
+-- Change the background of lualine_x section for normal mode
+custom_cat.normal.a.bg = '#afb4fe'
 custom_cat.normal.b.bg = '#313244'
 custom_cat.normal.b.fg = '#abb2d0'
 
