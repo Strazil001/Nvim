@@ -3,7 +3,7 @@ local custom_cat = require 'lualine.themes.catppuccin'
 -- Change the background of lualine_x section for normal mode
 custom_cat.normal.a.bg = '#afb4fe'
 custom_cat.normal.b.bg = '#313244'
-custom_cat.normal.b.fg = '#abb2d0'
+custom_cat.normal.b.fg = '#b4befe'
 
 local function getLspName()
 	local msg = 'No Active Lsp'
@@ -19,10 +19,6 @@ local function getLspName()
 		end
 	end
 	return "  " .. msg
-end
-
-local function archLogo()
-	return " "
 end
 
 require('lualine').setup {

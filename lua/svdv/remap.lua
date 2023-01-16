@@ -22,7 +22,7 @@ vim.keymap.set("n", "<leader>c", ":bd<CR>")
 
 -- Open horizontal terminal
 vim.keymap.set("n", "<leader>th", ":below 18 sp<CR>:term<CR>i", {silent = true})
-vim.keymap.set("t", "<leader>tc", "<C-\\><C-n>ZZ<CR>", {silent = true})
+vim.keymap.set("t", "<leader>tc", "exit<CR>", {silent = true})
 
 -- Color picker
 vim.keymap.set("n", "<C-c>", "<cmd>PickColor<cr>", {silent = true})
