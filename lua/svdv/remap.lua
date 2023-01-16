@@ -24,6 +24,8 @@ vim.keymap.set("n", "<leader>c", ":bd<CR>")
 vim.keymap.set("n", "<leader>th", ":below 18 sp<CR>:term<CR>i", {silent = true})
 vim.keymap.set("t", "<leader>tc", "exit<CR>", {silent = true})
 
+vim.keymap.set("n", "<leader>cc", ":below 18 sp<CR>:term<CR>ig++ std=c++2a -o ", {silent = true})
+
 -- Color picker
 vim.keymap.set("n", "<C-c>", "<cmd>PickColor<cr>", {silent = true})
 vim.keymap.set("i", "<C-c>", "<cmd>PickColorInsert<cr>", {silent = true})
@@ -67,3 +69,5 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+
