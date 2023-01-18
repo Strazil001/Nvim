@@ -26,26 +26,42 @@ lsp.setup_nvim_cmp({
 	mapping = cmp_mappings
 })
 
+vim.o.updatetime = 50
+
 lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 	vim.keymap.set("n", "<leader>a", function() vim.lsp.buf.code_action() end, opts)
 	vim.keymap.set("n", "<leader>h", function() vim.lsp.buf.hover() end, opts)
 	vim.keymap.set("n", "<leader>r", function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set("n", "<leader>i", function() vim.lsp.buf.implementation() end, opts)
+	vim.api.nvim_create_autocmd("CursorHold", {
+		buffer = bufnr,
+		callback = function()
+			local opts = {
+				focusable = false,
+				close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+				border = 'rounded',
+				source = 'always',
+				prefix = ' ',
+				scope = 'cursor',
+			}
+			vim.diagnostic.open_float(nil, opts)
+		end
+	})
 end)
 
 lsp.setup()
 
 vim.diagnostic.config(
 	{
-		virtual_text = true,
+		virtual_text = false,
 		signs = true,
-		update_in_insert = false,
+		update_in_insert = true,
 		underline = true,
 		severity_sort = false,
 		float = {
 			focusable = false,
-			style = 'minimal',
+			style = 'full',
 			border = 'rounded',
 			source = 'always',
 			header = '',

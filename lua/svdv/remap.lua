@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>vd", ":NvimTreeToggle<CR>", { silent = true })
+vim.keymap.set("n", "<leader>vv", ":NvimTreeToggle<CR>", { silent = true })
 
 vim.keymap.set("i", "jk", "<Esc>")
 
@@ -8,8 +8,8 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Tabline
-vim.keymap.set("n", "<Tab>", ":TablineBufferNext<CR>", {silent = true})
-vim.keymap.set("n", "<S-Tab>", ":TablineBufferPrevious<CR>", {silent = true})
+vim.keymap.set("n", "<A-n>", ":TablineBufferNext<CR>", { silent = true })
+vim.keymap.set("n", "<A-m>", ":TablineBufferPrevious<CR>", { silent = true })
 
 -- Window hopping wit Alt
 vim.keymap.set("n", "<A-h>", "<C-w>h<CR>")
@@ -17,18 +17,19 @@ vim.keymap.set("n", "<A-j>", "<C-w>j<CR>")
 vim.keymap.set("n", "<A-k>", "<C-w>k<CR>")
 vim.keymap.set("n", "<A-l>", "<C-w>l<CR>")
 
--- close buffer
+-- close leader
 vim.keymap.set("n", "<leader>c", ":bd<CR>")
 
 -- Open horizontal terminal
-vim.keymap.set("n", "<leader>th", ":below 18 sp<CR>:term<CR>i", {silent = true})
-vim.keymap.set("t", "<leader>tc", "exit<CR>", {silent = true})
+vim.keymap.set("n", "<leader>th", ":below 18 sp<CR>:term<CR>i", { silent = true })
+vim.keymap.set("t", "<leader>tc", "exit<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>cc", ":below 18 sp<CR>:term<CR>ig++ std=c++2a -o ", {silent = true})
+vim.keymap.set("n", "<leader>cn", ":below 18 sp<CR>:term<CR>ig++ std=c++2a -o ", { silent = true })
+vim.keymap.set("n", "<leader>cp", ":below 18 sp<CR>:term<CR>ig++ -o ", { silent = true })
 
 -- Color picker
-vim.keymap.set("n", "<C-c>", "<cmd>PickColor<cr>", {silent = true})
-vim.keymap.set("i", "<C-c>", "<cmd>PickColorInsert<cr>", {silent = true})
+vim.keymap.set("n", "<C-c>", "<cmd>PickColor<cr>", { silent = true })
+vim.keymap.set("i", "<C-c>", "<cmd>PickColorInsert<cr>", { silent = true })
 
 vim.keymap.set("n", "Y", "yg$")
 vim.keymap.set("n", "J", "mzJ`z")
@@ -37,10 +38,10 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Colorizer attach to buffer
-vim.keymap.set("n", "<leader>sc", ":ColorizerAttachToBuffer<CR>", {silent = true})
--- Colorizer detach from buffer
-vim.keymap.set("n", "<leader>hc", ":ColorizerDetachFromBuffer<CR>", {silent = true})
+-- Colorizer attach to leader
+vim.keymap.set("n", "<leader>sc", ":ColorizerAttachToBuffer<CR>", { silent = true })
+-- Colorizer detach from leader
+vim.keymap.set("n", "<leader>hc", ":ColorizerDetachFromBuffer<CR>", { silent = true })
 
 -- Paste from clipboard
 vim.keymap.set("x", "<leader>p", "\"+p")
@@ -71,3 +72,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 
+-- {{{ NOTE TAKING
+
+-- }}}
