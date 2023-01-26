@@ -17,7 +17,7 @@ vim.keymap.set("n", "<A-j>", "<C-w>j<CR>")
 vim.keymap.set("n", "<A-k>", "<C-w>k<CR>")
 vim.keymap.set("n", "<A-l>", "<C-w>l<CR>")
 
--- close leader
+-- Close buffer
 vim.keymap.set("n", "<leader>c", ":bd<CR>")
 
 -- Open horizontal terminal

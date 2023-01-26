@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local colors = {
 	red = '#cdd6f4',
 	grey = '#181825',
@@ -23,7 +24,7 @@ local theme = {
 
 local vim_icons = {
 	function()
-		return " "
+		return "  "
 	end,
 	separator = { left = "", right = "" },
 	color = { bg = "#313244", fg = "#80A7EA" },

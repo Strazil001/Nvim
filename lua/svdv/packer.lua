@@ -24,7 +24,9 @@ return require('packer').startup(function(use)
 	})
 	use { 'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup {} end }
 
-	use ('vimwiki/vimwiki')
+	use('vimwiki/vimwiki')
+
+	use('jlcrochet/vim-razor')
 
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
